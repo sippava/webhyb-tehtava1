@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, Text, View, Modal, Pressable } from 'react-native';
 
 export default function App() {
@@ -7,6 +8,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <StatusBar style="auto" />
       {/* Pääkomponentti  */}
       {/* Klikattava komponentti, joka avaa modaalin */} 
       <Pressable onPress={() => setModalVisible(true)}> 
@@ -19,7 +21,7 @@ export default function App() {
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          // Back-up nappi androidilla, sulkee modaalin. Eli muuttaa tilan falseksi. 
+          // Back-up nappi androidilla, sulkee modaalin. Eli muuttaa tilan falseksi.
           setModalVisible(false);
         }}
       >
